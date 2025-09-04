@@ -26,12 +26,16 @@ public static class GameComponentsLookup {
     public const int Stunned = 15;
     public const int Transform = 16;
     public const int WorldPosition = 17;
-    public const int CurrentHp = 18;
-    public const int Dead = 19;
-    public const int MaxHp = 20;
-    public const int ProcessingDeath = 21;
+    public const int Build = 18;
+    public const int BuildRadius = 19;
+    public const int BuildTypeId = 20;
+    public const int CurrentHp = 21;
+    public const int Dead = 22;
+    public const int MaxHp = 23;
+    public const int ProcessingDeath = 24;
+    public const int Throne = 25;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -52,10 +56,14 @@ public static class GameComponentsLookup {
         "Stunned",
         "Transform",
         "WorldPosition",
+        "Build",
+        "BuildRadius",
+        "BuildTypeId",
         "CurrentHp",
         "Dead",
         "MaxHp",
-        "ProcessingDeath"
+        "ProcessingDeath",
+        "Throne"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -77,9 +85,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Stunned),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Build),
+        typeof(Code.Gameplay.Features.BuildRadius),
+        typeof(Code.Gameplay.Features.BuildTypeIdComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
-        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath)
+        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Throne)
     };
 }

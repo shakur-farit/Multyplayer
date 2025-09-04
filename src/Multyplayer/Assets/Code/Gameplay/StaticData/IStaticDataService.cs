@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features;
+using Code.Infrastructure.View;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Config;
 using Cysharp.Threading.Tasks;
@@ -9,6 +11,7 @@ namespace Code.Gameplay.StaticData
   {
 	  UniTask Load();
 
-    WindowConfig GetWindowConfig(WindowId id);
+    WindowConfig GetWindowConfig(WindowId typeId);
+    BuildConfig GetBuildConfig(BuildTypeId typeId);
   }
 }
