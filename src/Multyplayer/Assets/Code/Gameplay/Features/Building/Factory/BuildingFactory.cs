@@ -3,42 +3,41 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using Unity.Collections;
 using UnityEngine;
 
 namespace Code.Gameplay.Features
 {
-	public class BuildFactory : IBuildFactory
+	public class BuildingFactory : IBuildingFactory
 	{
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
-		public BuildFactory(IIdentifierService identifier, IStaticDataService staticDataService)
+		public BuildingFactory(IIdentifierService identifier, IStaticDataService staticDataService)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
 		}
 
-		public GameEntity CreateBuild(BuildTypeId typeId, Vector3 at)
+		public GameEntity CreateBuilding(BuildingTypeId typeId, Vector3 at)
 		{
 			switch (typeId)
 			{
-				case BuildTypeId.Throne:
+				case BuildingTypeId.Throne:
 					return CreateThrone(typeId, at);
 			}
 
 			throw new Exception($"There is no build for {typeId}");
 		}
 
-		private GameEntity CreateThrone(BuildTypeId typeId, Vector3 at)
+		private GameEntity CreateThrone(BuildingTypeId typeId, Vector3 at)
 		{
 			return CreateBuildEntity(typeId, at)
 				.With(x => x.isThrone = true);
 		}
 
-		private GameEntity CreateBuildEntity(BuildTypeId typeId, Vector3 at)
+		private GameEntity CreateBuildEntity(BuildingTypeId typeId, Vector3 at)
 		{
-			BuildConfig config = _staticDataService.GetBuildConfig(typeId);
+			BuildingConfig config = _staticDataService.GetBuildingConfig(typeId);
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
@@ -46,8 +45,8 @@ namespace Code.Gameplay.Features
 					.AddViewPrefab(config.ViewPrefab)
 					.AddCurrentHp(config.CurrentHp)
 					.AddMaxHp(config.MaxHp)
-					.AddBuildRadius(config.BuildRadius)
-					.With(x => x.isBuild = true);
+					.AddBuildingRadius(config.BuildRadius)
+					.With(x => x.isBuilding = true);
 				;
 		}
 	}

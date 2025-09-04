@@ -29,6 +29,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6d04ff22fd246543a4163a4d66ebb9f
+    m_Address: Assets/StaticData/Building/BuildingConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e571ce7a8a2c59b4588142170cfa1dd0
     m_Address: Assets/StaticData/Window/GameOverWindowConfig.asset
     m_ReadOnly: 0

@@ -12,6 +12,6 @@ namespace Code.Gameplay.StaticData
 	  UniTask Load();
 
     WindowConfig GetWindowConfig(WindowId typeId);
-    BuildConfig GetBuildConfig(BuildTypeId typeId);
+    BuildingConfig GetBuildingConfig(BuildingTypeId typeId);
   }
 }

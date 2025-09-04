@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features
 {
-	[CreateAssetMenu(menuName = "Multyplayer/Build Config", fileName = "BuildConfig")]
-	public class BuildConfig : ScriptableObject
+	[CreateAssetMenu(menuName = "Multyplayer/Building Config", fileName = "BuildingConfig")]
+	public class BuildingConfig : ScriptableObject
 	{
-		public BuildTypeId TypeId;
+		public BuildingTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
 		public float CurrentHp;
 		public float MaxHp;

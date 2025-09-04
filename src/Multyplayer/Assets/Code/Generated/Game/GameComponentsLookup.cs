@@ -26,9 +26,9 @@ public static class GameComponentsLookup {
     public const int Stunned = 15;
     public const int Transform = 16;
     public const int WorldPosition = 17;
-    public const int Build = 18;
-    public const int BuildRadius = 19;
-    public const int BuildTypeId = 20;
+    public const int Building = 18;
+    public const int BuildingRadius = 19;
+    public const int BuildingTypeId = 20;
     public const int CurrentHp = 21;
     public const int Dead = 22;
     public const int MaxHp = 23;
@@ -56,9 +56,9 @@ public static class GameComponentsLookup {
         "Stunned",
         "Transform",
         "WorldPosition",
-        "Build",
-        "BuildRadius",
-        "BuildTypeId",
+        "Building",
+        "BuildingRadius",
+        "BuildingTypeId",
         "CurrentHp",
         "Dead",
         "MaxHp",
@@ -85,9 +85,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Stunned),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
-        typeof(Code.Gameplay.Features.Build),
-        typeof(Code.Gameplay.Features.BuildRadius),
-        typeof(Code.Gameplay.Features.BuildTypeIdComponent),
+        typeof(Code.Gameplay.Features.Building),
+        typeof(Code.Gameplay.Features.BuildingRadius),
+        typeof(Code.Gameplay.Features.BuildingTypeIdComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),

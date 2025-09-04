@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherBuild;
+    static Entitas.IMatcher<GameEntity> _matcherBuilding;
 
-    public static Entitas.IMatcher<GameEntity> Build {
+    public static Entitas.IMatcher<GameEntity> Building {
         get {
-            if (_matcherBuild == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Build);
+            if (_matcherBuilding == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Building);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherBuild = matcher;
+                _matcherBuilding = matcher;
             }
 
-            return _matcherBuild;
+            return _matcherBuilding;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Build buildComponent = new Code.Gameplay.Features.Build();
+    static readonly Code.Gameplay.Features.Building buildingComponent = new Code.Gameplay.Features.Building();
 
-    public bool isBuild {
-        get { return HasComponent(GameComponentsLookup.Build); }
+    public bool isBuilding {
+        get { return HasComponent(GameComponentsLookup.Building); }
         set {
-            if (value != isBuild) {
-                var index = GameComponentsLookup.Build;
+            if (value != isBuilding) {
+                var index = GameComponentsLookup.Building;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : buildComponent;
+                            : buildingComponent;
 
                     AddComponent(index, component);
                 } else {

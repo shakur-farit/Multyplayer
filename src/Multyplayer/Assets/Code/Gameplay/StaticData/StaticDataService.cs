@@ -11,11 +11,11 @@ namespace Code.Gameplay.StaticData
 {
 	public class StaticDataService : IStaticDataService
 	{
-		private const string BuildConfigLabel = "BuildConfig";
+		private const string BuildingConfigLabel = "BuildingConfig";
 		private const string WindowConfigLabel = "WindowConfig";
 
 		private Dictionary<WindowId, WindowConfig> _windowById;
-		private Dictionary<BuildTypeId, BuildConfig> _buildById;
+		private Dictionary<BuildingTypeId, BuildingConfig> _buildingById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -24,16 +24,16 @@ namespace Code.Gameplay.StaticData
 
 		public async UniTask Load()
 		{
-			await LoadBuilds();
+			await LoadBuildings();
 			await LoadWindows();
 		}
 
-		public BuildConfig GetBuildConfig(BuildTypeId typeId)
+		public BuildingConfig GetBuildingConfig(BuildingTypeId typeId)
 		{
-			if (_buildById.TryGetValue(typeId, out BuildConfig config))
+			if (_buildingById.TryGetValue(typeId, out BuildingConfig config))
 				return config;
 
-			throw new Exception($"Window config for {typeId} was not found");
+			throw new Exception($"Building config for {typeId} was not found");
 		}
 
 		public WindowConfig GetWindowConfig(WindowId typeId)
@@ -44,8 +44,8 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Window config for {typeId} was not found");
 		}
 
-		private async UniTask LoadBuilds() =>
-			_buildById = (await _assetProvider.LoadAll<BuildConfig>(BuildConfigLabel))
+		private async UniTask LoadBuildings() =>
+			_buildingById = (await _assetProvider.LoadAll<BuildingConfig>(BuildingConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 

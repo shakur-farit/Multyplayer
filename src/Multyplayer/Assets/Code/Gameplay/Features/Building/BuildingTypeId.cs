@@ -1,6 +1,6 @@
 ﻿namespace Code.Gameplay.Features
 {
-	public enum BuildTypeId
+	public enum BuildingTypeId
 	{
 		Unknown = 0,
 		Throne = 1,

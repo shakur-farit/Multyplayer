@@ -93,7 +93,7 @@ namespace Code.Infrastructure.Installers
 		private void BindGameplayFactories()
 		{
 			Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
-			Container.Bind<IBuildFactory>().To<BuildFactory>().AsSingle();
+			Container.Bind<IBuildingFactory>().To<BuildingFactory>().AsSingle();
 		}
 
 		private void BindUIFactories()
